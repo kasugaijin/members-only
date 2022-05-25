@@ -1,10 +1,2 @@
 <h2>This is the post index</h2>
-
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <strong><%= post.title %></strong>
-      <%= post.body %>
-    </li>
-  <% end %>
-</ul>
+<%= render 'feed' %>

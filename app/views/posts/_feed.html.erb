@@ -1,0 +1,10 @@
+
+  <% @posts.each do |p|%>
+    <div class='tile'>
+      <% if user_signed_in? %>
+        <strong>By: <%= p.user.username %></strong>
+      <% end %>
+      <p>Title: <%= p.title %></p>
+      <p>Body: <%= p.body %></p>
+    </div>
+  <% end %>

@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ .tile {
+   width: 200px;
+   border-style: solid;
+   border-radius: 10px;
+   margin-bottom: 10px;
+ }
