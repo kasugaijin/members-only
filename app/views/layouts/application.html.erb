@@ -10,42 +10,53 @@
     <%= javascript_importmap_tags %>
   </head>
 
+ <body>
   <%# these flash hashes are added per the Devise install recommendation %>
     <% if flash[:notice] %>
-      <div class="">      
-        <p class=""><%= notice %></p> 
+      <div class="notice-div">      
+        <p class="notice"><%= notice %></p> 
       </div>
     <% end %>
     <% if flash[:alert] %>
-      <div class=''>
-        <p class=''><%= alert %></p>
+      <div class='notice-div'>
+        <p class='alert'><%= alert %></p>
       </div>
     <% end %>
 
-  <h1>This is Members Only - madafaka</h1>
-
-  <div class='field is-grouped'>
-              <p class='control'>
-                <%= link_to 'New Post', new_post_path, class: 'button is-info is-inverted' %>
-              </p>
-              <% if user_signed_in? %>
-                <p class='control'>
-                  <%= link_to current_user.username, edit_user_registration_path, class: 'button is-info' %>
-                </p>
-                <p>
-                  <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: "delete" }, class: 'button is-info' %>
-                </p>
-              <% else %>
-                <p class='control'>
-                  <%= link_to 'Log in', new_user_session_path, method: :get, class: 'button is-info' %>
-                </p>
-                <p class='control'>
-                <%= link_to 'Sign up', new_user_registration_path, class: 'button is-info' %>
-                </p>
-              <% end %>
-            </div>
-
-  <body>
+  <div class='header'>
+    <%= link_to root_path, class: "home-link" do %>
+      <h1>Members Only</h1>
+    <% end %>
+   
+    <div class='header-links'>
+      <p class='control'>
+        <%= link_to 'New Post', new_post_path %>
+      </p>
+      <% if user_signed_in? %>
+        <p class='control'>
+          <%= link_to current_user.username, edit_user_registration_path %>
+        </p>
+        <p class='control'>
+          <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: "delete" } %>
+        </p>
+      <% else %>
+        <p class='control'>
+          <%= link_to 'Log in', new_user_session_path, method: :get %>
+        </p>
+        <p class='control'>
+          <%= link_to 'Sign up', new_user_registration_path %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+ 
+  <div class="feed-container">  
     <%= yield %>
+  </div>
+
+  <div class="footer">  
+    <p>2022 Kasugaijin for The Odin Project.</p>
+  </div>
+
   </body>
 </html>

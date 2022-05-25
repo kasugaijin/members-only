@@ -1,2 +1,6 @@
-<h2>This is the post index</h2>
+<% if user_signed_in? %>  
+  <h2>Make a post!</h2>
+<% else %>
+  <h2>Sign in to make a post</h2>
+<% end %>
 <%= render 'feed' %>

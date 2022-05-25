@@ -1,3 +1,12 @@
-<h1><%= @post.title %></h1>
-
-<p><%= @post.body %></p>
+<div class='show-post'>
+  <div class='show-header'>
+    <% if user_signed_in?%>
+      <h1>@<%= @post.user.username %> - <%= @post.title %></h1>
+    <% else %>
+      <h1><%= @post.title %></h1>
+    <% end %>
+  </div>
+  <div class='show-body'>
+    <p><%= @post.body %></p>
+  </div>
+</div>
