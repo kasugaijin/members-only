@@ -5,4 +5,4 @@ The 'Members Only' application is a project for The Odin Project ruby on rails p
 While using CSS frameworks in rails is a convenient way to style an app, I chose to use vanilla CSS to style this app, mainly using flexbox to organise elements. The reason for this was to make an app that did not look like all the others submitted by students, and to keep my CSS skills sharpened. I am happy with the way it looks. 
 
 Screenshot:
-![Screenshot](./barker.png?raw=true "")
+![Screenshot](./screenshot.png?raw=true "")
